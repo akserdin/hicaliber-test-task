@@ -11,6 +11,8 @@ const availableFilters = [
     {display: 'Price, max', name: 'price_max', min: 263604, max: 521951, value: null}
 ];
 
+Vue.component('item', require('./components/Item'));
+
 import Vue2Filters from 'vue2-filters';
 
 Vue.use(Vue2Filters);
@@ -59,7 +61,9 @@ new Vue({
 
             axios.get('/properties', {params: vm.getAppliedFilters()})
                 .then(vm.handleResponse)
-                .catch(function(err) {});
+                .catch(function(err) {
+                    console.log(err);
+                });
         },
 
         handleResponse(res) {
