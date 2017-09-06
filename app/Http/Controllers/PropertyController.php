@@ -7,11 +7,22 @@ use Illuminate\Http\Request;
 
 class PropertyController extends Controller
 {
+    /**
+     * Load search page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('index');
     }
 
+    /**
+     * Get properties filtered by params
+     *
+     * @param Request $request
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
     public function data(Request $request)
     {
         $properties = Property::query();
