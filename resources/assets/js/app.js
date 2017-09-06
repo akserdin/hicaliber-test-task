@@ -7,8 +7,8 @@ const availableFilters = [
     {display: 'Bathrooms', name: 'bathrooms', min: 1, max: 3, value: null},
     {display: 'Storeys', name: 'storeys', min: 1, max: 2, value: null},
     {display: 'Garages', name: 'garages', min: 1, max: 2, value: null},
-    {display: 'Price, min', name: 'price_min', min: 263604, max: 521951, value: null},
-    {display: 'Price, max', name: 'price_max', min: 263604, max: 521951, value: null}
+    {display: 'Price, min', name: 'price_min', min: 263604, max: 521951, value: 263604},
+    {display: 'Price, max', name: 'price_max', min: 263604, max: 521951, value: 521951}
 ];
 
 Vue.use(require('vue2-filters'));
