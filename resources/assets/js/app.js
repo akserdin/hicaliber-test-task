@@ -11,11 +11,8 @@ const availableFilters = [
     {display: 'Price, max', name: 'price_max', min: 263604, max: 521951, value: null}
 ];
 
+Vue.use(require('vue2-filters'));
 Vue.component('item', require('./components/Item'));
-
-import Vue2Filters from 'vue2-filters';
-
-Vue.use(Vue2Filters);
 
 new Vue({
     el: '#app',
