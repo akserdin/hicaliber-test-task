@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PropertyController@index');
+Route::get('/properties', 'PropertyController@data');
