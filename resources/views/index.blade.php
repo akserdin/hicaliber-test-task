@@ -19,6 +19,14 @@
 </head>
 <body>
 
+<div class="container">
+    <div class="page-header">
+        <h1>Search for a property <small>Test task</small></h1>
+    </div>
+
+    <div id="app"></div>
+</div>
+
 <script src="/js/app.js"></script>
 </body>
 </html>
