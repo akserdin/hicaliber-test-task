@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Property;
+use Illuminate\Http\Request;
+
+class PropertyController extends Controller
+{
+    public function index()
+    {
+        return view('index');
+    }
+
+    public function data(Request $request)
+    {
+        $properties = Property::query();
+
+        if ($request->has('name') && mb_strlen($request->input('name')) > 1) {
+            $properties->where('name', 'like', '%' . $request->input('name') . '%');
+        }
+
+        if ($request->has('price_min') && $request->has('price_max')) {
+            $properties->whereBetween('price', [$request->input('price_min'), $request->input('price_max')]);
+        }
+
+        foreach (['bedrooms', 'bathrooms', 'storeys', 'garages'] as $prop) {
+            if ($request->has($prop)) {
+                $properties->where($prop, $request->input($prop));
+            }
+        }
+
+        return $properties->get();
+    }
+}
