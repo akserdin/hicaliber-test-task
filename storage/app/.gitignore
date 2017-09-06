@@ -1,3 +1,4 @@
 *
 !public/
 !.gitignore
+!property-data.csv
